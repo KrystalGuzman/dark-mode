@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
+import { BrowserRouter as Router } from "react-router-dom";
 
 import Charts from "./components/Charts";
 import Navbar from "./components/Navbar";
@@ -23,8 +24,10 @@ const App = () => {
       <Navbar />
       <Charts coinData={coinData} />
     </div>
+    
   );
+  
 };
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+ReactDOM.render(<Router><App /></Router>, rootElement);
